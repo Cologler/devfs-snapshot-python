@@ -1,4 +1,49 @@
 [[package]]
+name = "anyser"
+version = "0.1.2"
+description = ""
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.extras]
+bencode = ["bencode.py"]
+bson = ["bson"]
+json5 = ["json5"]
+toml = ["toml"]
+yaml = ["pyyaml"]
+
+[[package]]
+name = "atomicwrites"
+version = "1.4.0"
+description = "Atomic file writes."
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[[package]]
+name = "filelock"
+version = "3.0.12"
+description = "A platform independent file lock."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "fsoopify"
+version = "0.5.2"
+description = ""
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+anyser = ">=0.1.1,<0.2.0"
+atomicwrites = ">=1.4.0,<2.0.0"
+filelock = ">=3.0.12,<4.0.0"
+portalocker = ">=2.0.0,<3.0.0"
+
+[[package]]
 name = "ftputil"
 version = "5.0.1"
 description = "High-level FTP client library (virtual file system and more)"
@@ -6,12 +51,68 @@ category = "main"
 optional = false
 python-versions = ">=3.6"
 
+[[package]]
+name = "portalocker"
+version = "2.3.0"
+description = "Wraps the portalocker recipe for easy usage"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+pywin32 = {version = "!=226", markers = "platform_system == \"Windows\""}
+
+[package.extras]
+docs = ["sphinx (>=1.7.1)"]
+redis = ["redis"]
+tests = ["pytest (>=5.4.1)", "pytest-cov (>=2.8.1)", "sphinx (>=3.0.3)", "pytest-flake8 (>=1.0.5)", "pytest-mypy (>=0.8.0)", "redis"]
+
+[[package]]
+name = "pywin32"
+version = "300"
+description = "Python for Window Extensions"
+category = "main"
+optional = false
+python-versions = "*"
+
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "d16b64336b5eddb62559595a18e73074bf88d35304c0f3db39575c10c178db28"
+content-hash = "0bc66293c96720990698ce01c0fa06357bd66abd381d1d02aa5af52e229971f2"
 
 [metadata.files]
+anyser = [
+    {file = "anyser-0.1.2-py3-none-any.whl", hash = "sha256:a1ec7c495c7ce858e6f2ec7da27dc4f41e3410f827db4f6ac0369a5dee59afc6"},
+    {file = "anyser-0.1.2.tar.gz", hash = "sha256:6cc1d220a4886c6059d7187d319e5e830b40e2fa50be7b22743a55afa305f8da"},
+]
+atomicwrites = [
+    {file = "atomicwrites-1.4.0-py2.py3-none-any.whl", hash = "sha256:6d1784dea7c0c8d4a5172b6c620f40b6e4cbfdf96d783691f2e1302a7b88e197"},
+    {file = "atomicwrites-1.4.0.tar.gz", hash = "sha256:ae70396ad1a434f9c7046fd2dd196fc04b12f9e91ffb859164193be8b6168a7a"},
+]
+filelock = [
+    {file = "filelock-3.0.12-py3-none-any.whl", hash = "sha256:929b7d63ec5b7d6b71b0fa5ac14e030b3f70b75747cef1b10da9b879fef15836"},
+    {file = "filelock-3.0.12.tar.gz", hash = "sha256:18d82244ee114f543149c66a6e0c14e9c4f8a1044b5cdaadd0f82159d6a6ff59"},
+]
+fsoopify = [
+    {file = "fsoopify-0.5.2-py3-none-any.whl", hash = "sha256:54c738f23ba86b8912bbc0524438dc2e30e736922a48a2a5ca61a0a70f772ba5"},
+    {file = "fsoopify-0.5.2.tar.gz", hash = "sha256:db06b87c9617dd8c04619542d3cb4dd5e40e5c0f66eea489e6545c6112f5655b"},
+]
 ftputil = [
     {file = "ftputil-5.0.1.tar.gz", hash = "sha256:394997ccb3cd4825c6e22b5e349c62cf5016c35db4d60940f3513db66d205561"},
+]
+portalocker = [
+    {file = "portalocker-2.3.0-py2.py3-none-any.whl", hash = "sha256:1d43fd8223e1743f5725e8910f69e7a45858ffd298e19252633ac903eafd83bc"},
+    {file = "portalocker-2.3.0.tar.gz", hash = "sha256:4e913d807aa6598c320e8a50c50e2ee0602bc45240b485e3f8bc06f13060084c"},
+]
+pywin32 = [
+    {file = "pywin32-300-cp35-cp35m-win32.whl", hash = "sha256:1c204a81daed2089e55d11eefa4826c05e604d27fe2be40b6bf8db7b6a39da63"},
+    {file = "pywin32-300-cp35-cp35m-win_amd64.whl", hash = "sha256:350c5644775736351b77ba68da09a39c760d75d2467ecec37bd3c36a94fbed64"},
+    {file = "pywin32-300-cp36-cp36m-win32.whl", hash = "sha256:a3b4c48c852d4107e8a8ec980b76c94ce596ea66d60f7a697582ea9dce7e0db7"},
+    {file = "pywin32-300-cp36-cp36m-win_amd64.whl", hash = "sha256:27a30b887afbf05a9cbb05e3ffd43104a9b71ce292f64a635389dbad0ed1cd85"},
+    {file = "pywin32-300-cp37-cp37m-win32.whl", hash = "sha256:d7e8c7efc221f10d6400c19c32a031add1c4a58733298c09216f57b4fde110dc"},
+    {file = "pywin32-300-cp37-cp37m-win_amd64.whl", hash = "sha256:8151e4d7a19262d6694162d6da85d99a16f8b908949797fd99c83a0bfaf5807d"},
+    {file = "pywin32-300-cp38-cp38-win32.whl", hash = "sha256:fbb3b1b0fbd0b4fc2a3d1d81fe0783e30062c1abed1d17c32b7879d55858cfae"},
+    {file = "pywin32-300-cp38-cp38-win_amd64.whl", hash = "sha256:60a8fa361091b2eea27f15718f8eb7f9297e8d51b54dbc4f55f3d238093d5190"},
+    {file = "pywin32-300-cp39-cp39-win32.whl", hash = "sha256:638b68eea5cfc8def537e43e9554747f8dee786b090e47ead94bfdafdb0f2f50"},
+    {file = "pywin32-300-cp39-cp39-win_amd64.whl", hash = "sha256:b1609ce9bd5c411b81f941b246d683d6508992093203d4eb7f278f4ed1085c3f"},
 ]
